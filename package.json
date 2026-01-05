@@ -4,7 +4,7 @@
   "description": "Generate PR diff and prep for GitHub Copilot review",
   "publisher": "SamuelThien",
   "license": "MIT",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/samuelabc/ai-pr-review-vscode-extension"
