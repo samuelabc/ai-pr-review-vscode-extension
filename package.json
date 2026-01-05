@@ -3,7 +3,7 @@
   "displayName": "ai-pr-review",
   "description": "Generate PR diff and prep for GitHub Copilot review",
   "license": "MIT",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/samuelabc/ai-pr-review-vscode-extension"
@@ -52,6 +52,7 @@
         },
         "ai-pr-review.promptComment": {
           "type": "string",
+          "editPresentation": "multilineText",
           "markdownDescription": "Template used when opening Copilot Chat for review. You can include ${FILE_NAME} which will be replaced with the generated diff file name.",
           "default": "# AI Code Review Prompt\n# Review the following code changes in ${FILE_NAME}.\n# Please provide detailed feedback focusing on:\n\n# 1. Correctness\n#    - Identify potential bugs or logical errors.\n#    - Verify that the code meets the intended behavior.\n\n# 2. Performance\n#    - Highlight inefficient algorithms or operations.\n#    - Suggest improvements if applicable.\n\n# 3. Readability & Maintainability\n#    - Comment on code clarity, naming, and structure.\n#    - Suggest refactoring opportunities.\n\n# 4. Security\n#    - Identify vulnerabilities or unsafe patterns.\n#    - Suggest mitigations or safer alternatives.\n\n# Instructions:\n# - Provide actionable feedback and examples when possible.\n# - Keep comments concise and precise.\n# - Avoid generic statements; focus on the code in context.\n\n"
         }

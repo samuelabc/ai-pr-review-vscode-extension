@@ -5,14 +5,8 @@ import { registerChatParticipant } from "./chat/participant";
 import { buildPrompt, DEFAULT_PROMPT_TEMPLATE } from "./prompt";
 import { DEFAULT_FILE_NAME } from "./constants";
 export { buildPrompt, DEFAULT_PROMPT_TEMPLATE } from "./prompt";
-
-// Exported for testing: normalize and filter branches list from git output
-export function parseBranchList(raw: string): string[] {
-  return raw
-    .split("\n")
-    .map((b) => b.trim())
-    .filter((b) => b.length > 0);
-}
+import { getBranches, sortTargetBranches } from "./git/branches";
+export { parseBranchList } from "./git/branches";
 
 export function activate(context: vscode.ExtensionContext) {
   // Register chat participant via helper
@@ -36,11 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
           DEFAULT_FILE_NAME;
 
         // --- Get all branches sorted by recency ---
-        const branchesRaw = execSync(
-          'git for-each-ref --sort=-committerdate --format="%(refname:short)" refs/heads/ refs/remotes/',
-          { cwd: workspacePath }
-        );
-        const branches = parseBranchList(branchesRaw.toString());
+        const branches = getBranches(workspacePath);
 
         // --- Source branch dropdown ---
         const srcBranch = await vscode.window.showQuickPick(branches, {
@@ -52,9 +42,12 @@ export function activate(context: vscode.ExtensionContext) {
         }
 
         // --- Target branch dropdown ---
-        const tgtBranch = await vscode.window.showQuickPick(branches, {
-          placeHolder: "Select target branch",
-        });
+        const tgtBranch = await vscode.window.showQuickPick(
+          sortTargetBranches(branches),
+          {
+            placeHolder: "Select target branch",
+          }
+        );
         if (!tgtBranch) {
           vscode.window.showErrorMessage("Target branch required");
           return;
