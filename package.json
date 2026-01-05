@@ -1,7 +1,7 @@
 {
   "name": "ai-pr-review",
-  "displayName": "ai-pr-review",
-  "description": "Generate PR diff and prep for GitHub Copilot review",
+  "displayName": "AI PR Review",
+  "description": "Generate a PR-style diff from Git branches or an Azure DevOps PR URL, then open GitHub Copilot Chat ready for code review.",
   "publisher": "SamuelThien",
   "license": "MIT",
   "version": "0.3.2",
@@ -9,16 +9,41 @@
     "type": "git",
     "url": "https://github.com/samuelabc/ai-pr-review-vscode-extension"
   },
+  "homepage": "https://github.com/samuelabc/ai-pr-review-vscode-extension#readme",
+  "bugs": {
+    "url": "https://github.com/samuelabc/ai-pr-review-vscode-extension/issues"
+  },
   "engines": {
     "vscode": "^1.107.0"
   },
   "categories": [
+    "AI",
+    "Chat",
+    "Machine Learning",
     "Other"
   ],
+  "keywords": [
+    "ai",
+    "code review",
+    "pull request",
+    "pr",
+    "diff",
+    "git",
+    "copilot",
+    "github copilot",
+    "copilot chat",
+    "azure devops"
+  ],
+  "qna": "marketplace",
+  "galleryBanner": {
+    "color": "#0f172a",
+    "theme": "dark"
+  },
   "main": "./out/extension.js",
   "vsce": {
     "dependencies": false
   },
+  "icon": "media/icon.png",
   "contributes": {
     "chatParticipants": [
       {

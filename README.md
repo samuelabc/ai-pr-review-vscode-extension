@@ -1,5 +1,7 @@
 # AI PR Review (VS Code Extension)
 
+![AI PR Review](media/icon.png)
+
 [![Release](https://github.com/samuelabc/ai-pr-review-vscode-extension/actions/workflows/release.yml/badge.svg)](https://github.com/samuelabc/ai-pr-review-vscode-extension/actions/workflows/release.yml)
 [![Release Please](https://github.com/samuelabc/ai-pr-review-vscode-extension/actions/workflows/release-please.yml/badge.svg)](https://github.com/samuelabc/ai-pr-review-vscode-extension/actions/workflows/release-please.yml)
 [![VS Marketplace](https://img.shields.io/visual-studio-marketplace/v/SamuelThien.ai-pr-review)](https://marketplace.visualstudio.com/items?itemName=SamuelThien.ai-pr-review)
@@ -7,7 +9,7 @@
 [![VS Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/SamuelThien.ai-pr-review)](https://marketplace.visualstudio.com/items?itemName=SamuelThien.ai-pr-review)
 [![License](https://img.shields.io/github/license/samuelabc/ai-pr-review-vscode-extension)](LICENSE.txt)
 
-This extension lets you generate a PR-style diff from two branches or directly from an Azure DevOps Pull Request URL and send it straight to GitHub Copilot Chat, with `@reviewer` ready to review.
+Generate a PR-style diff from two branches (or an Azure DevOps PR URL) and open GitHub Copilot Chat with `@reviewer` ready to review.
 
 It’s designed to make local code review easier and more effective. By consolidating all changes into a single diff and pairing it with a structured prompt, you can get useful Copilot feedback early, before opening a PR or asking teammates to review.
 
