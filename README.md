@@ -1,6 +1,6 @@
 # ai-pr-review README
 
-[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
+[![CI](https://github.com/samuelabc/ai-pr-review-vscode-extension/actions/workflows/ci.yml/badge.svg)](https://github.com/samuelabc/ai-pr-review-vscode-extension/actions/workflows/ci.yml)
 
 This extension:
 1. Ask for source branch (branch with changes)
