@@ -69,3 +69,4 @@ It’s designed to make local code review easier and more effective. By consolid
 - Set a repository secret named `VSCE_PAT` containing your Visual Studio Marketplace Personal Access Token.
 - On tag push (`v*`), the release workflow will publish automatically if `VSCE_PAT` is present.
 - To generate a token, see: [Publishing Extensions: Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token)
+# release-please smoke test
