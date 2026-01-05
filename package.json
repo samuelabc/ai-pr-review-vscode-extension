@@ -16,6 +16,9 @@
     "Other"
   ],
   "main": "./out/extension.js",
+  "vsce": {
+    "dependencies": false
+  },
   "contributes": {
     "chatParticipants": [
       {
