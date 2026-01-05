@@ -2,7 +2,12 @@
   "name": "ai-pr-review",
   "displayName": "ai-pr-review",
   "description": "Generate PR diff and prep for GitHub Copilot review",
-  "version": "0.2.2",
+  "license": "MIT",
+  "version": "0.2.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samuelabc/ai-pr-review-vscode-extension"
+  },
   "engines": {
     "vscode": "^1.107.0"
   },
