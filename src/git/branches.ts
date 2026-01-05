@@ -19,10 +19,13 @@ export function getBranches(workspacePath: string): string[] {
 
 // For target branch selection, pin common default branches to the top
 // Pinned order: master, production (including remote variants like origin/master)
-export function sortTargetBranches(branches: string[]): string[] {
+export function sortTargetBranches(
+  branches: string[],
+  gitRemote: string = "origin"
+): string[] {
   const pinnedPriority = ["master", "production"];
 
-  const variants = (name: string) => [name, `origin/${name}`];
+  const variants = (name: string) => [name, `${gitRemote}/${name}`];
   const included: string[] = [];
   const includedSet = new Set<string>();
 

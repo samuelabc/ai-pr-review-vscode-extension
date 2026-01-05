@@ -32,6 +32,10 @@
         "title": "AI PR Review"
       },
       {
+        "command": "ai-pr-review.reviewAzurePr",
+        "title": "AI PR Review: Review Azure DevOps PR URL"
+      },
+      {
         "command": "ai-pr-review.setFileName",
         "title": "AI PR Review: Edit File Name"
       },
@@ -43,6 +47,16 @@
     "configuration": {
       "title": "AI PR Review",
       "properties": {
+        "ai-pr-review.gitRemote": {
+          "type": "string",
+          "markdownDescription": "Git remote name used for fetch/diff operations (default: `origin`).",
+          "default": "origin"
+        },
+        "ai-pr-review.azureDevops.patEnvVar": {
+          "type": "string",
+          "markdownDescription": "Environment variable name containing your Azure DevOps PAT. Defaults to `AZURE_DEVOPS_EXT_PAT` (Azure DevOps CLI convention).",
+          "default": "AZURE_DEVOPS_EXT_PAT"
+        },
         "ai-pr-review.fileName": {
           "type": "string",
           "markdownDescription": "Filename for the generated diff in your workspace. Example: `ai_code_review.diff`.",
