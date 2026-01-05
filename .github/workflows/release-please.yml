@@ -17,6 +17,11 @@ jobs:
       - name: Release Please
         uses: googleapis/release-please-action@v4
         with:
+          # IMPORTANT: tags/releases created with the default GITHUB_TOKEN do NOT
+          # trigger other workflows (like `release.yml` on `push.tags`).
+          # Use a PAT (or GitHub App token) with `workflow` permission to allow
+          # the tag creation to trigger the Release workflow.
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
           config-file: .release-please-config.json
           manifest-file: .release-please-manifest.json
 
