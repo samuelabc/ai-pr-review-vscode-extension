@@ -1,6 +1,7 @@
 import * as assert from 'assert';
 import * as vscode from 'vscode';
 import { buildPrompt, DEFAULT_PROMPT_TEMPLATE, parseBranchList } from '../extension';
+import { parseAzureDevopsPrUrl } from '../azure/azureDevops';
 
 suite('AI PR Review Extension', () => {
 	test('activates and registers commands', async () => {
@@ -32,5 +33,15 @@ suite('AI PR Review Extension', () => {
 		const raw = '\n main\n feature/test \n  \n';
 		const branches = parseBranchList(raw);
 		assert.deepStrictEqual(branches, ['main', 'feature/test']);
+	});
+
+	test('parseAzureDevopsPrUrl parses dev.azure.com pullrequest URL', () => {
+		const url = 'https://dev.azure.com/samuelthien/test-project/_git/test-repo/pullrequest/335937';
+		const parsed = parseAzureDevopsPrUrl(url);
+		assert.strictEqual(parsed.organization, 'samuelthien');
+		assert.strictEqual(parsed.project, 'test-project');
+		assert.strictEqual(parsed.repository, 'test-repo');
+		assert.strictEqual(parsed.pullRequestId, 335937);
+		assert.strictEqual(parsed.baseUrl, 'https://dev.azure.com/samuelthien');
 	});
 });
