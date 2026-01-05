@@ -4,6 +4,13 @@ All notable changes to the "ai-pr-review" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.3.2](https://github.com/samuelabc/ai-pr-review-vscode-extension/compare/v0.3.1...v0.3.2) (2026-01-05)
+
+
+### Bug Fixes
+
+* vsce issue https://github.com/microsoft/vscode-vsce/issues/580#issuecomment-1399955227 ([09e6e2a](https://github.com/samuelabc/ai-pr-review-vscode-extension/commit/09e6e2ac9996e6dfe67f6c57b8d23cce5b283d1c))
+
 ## [0.3.1](https://github.com/samuelabc/ai-pr-review-vscode-extension/compare/v0.3.0...v0.3.1) (2026-01-05)
 
 
